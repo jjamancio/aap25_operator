@@ -1,8 +1,8 @@
 ---
-- hosts: all
+- hosts: web
   tasks:
     - name: Check webserver status code
       uri:
-        url: "http://{{ ansible_host }}/"
+        url: "https://{{ ansible_host }}/"
         status_code: 200
       delegate_to: localhost
