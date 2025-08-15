@@ -1,0 +1,6 @@
+---
+- name: Print date and time
+  hosts: node1
+  tasks:
+    - name: Use date command to print system date and time
+      command: date
