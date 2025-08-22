@@ -1,5 +1,7 @@
 - name: Time Synchronization Play
   hosts: node1
+  collections:
+   - redhat.rhel_system_roles
   vars:
     timesync_ntp_servers:
       - hostname: a.st1.ntp.br
