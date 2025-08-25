@@ -16,6 +16,8 @@
     - rhel-system-roles.timesync
 
   tasks:
+    - import_role:
+        name: rhel_system_roles.timesync
     - name: Set timezone
       timezone:
         name: "{{ timezone }}"
