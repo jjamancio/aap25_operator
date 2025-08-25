@@ -13,7 +13,7 @@
     timezone: UTC
 
   roles:
-    - redhat.rhel-system-roles.timesync
+    - rhel-system-roles.timesync
 
   tasks:
     - name: Set timezone
