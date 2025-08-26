@@ -1,5 +1,7 @@
 - name: Time Synchronization Play
   hosts: node1
+  collections:
+    - redhat.rhel-system-roles
   vars:
     timesync_ntp_servers:
       - hostname: a.st1.ntp.br
@@ -10,10 +12,9 @@
         iburst: yes
     timezone: UTC
 
-  roles:
-    - rhel-system-roles.timesync
-
   tasks:
     - name: Set timezone
+    - import_role:
+        name: rhel-system-roles.timesync
       timezone:
         name: "{{ timezone }}"
