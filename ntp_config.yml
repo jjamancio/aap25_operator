@@ -12,8 +12,8 @@
         iburst: yes
     timezone: UTC
 
-- import_role:
-    name: rhel-system-roles.timesync
+  roles:
+    - rhel-system-roles.timesync
 
   tasks:
     - name: Set timezone
