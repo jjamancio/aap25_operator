@@ -1,5 +1,5 @@
 - name: Time Synchronization Play
-  hosts: node1.lab.example.com
+  hosts: node1
   vars:
     timesync_ntp_servers:
       - hostname: 0.rhel.pool.ntp.org
