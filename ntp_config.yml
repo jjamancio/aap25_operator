@@ -1,16 +1,17 @@
-- name: Time Synchronization Play
-  hosts: node1
+---
+- hosts: node1
+  become: yes
   vars:
-    timesync_ntp_servers:
-      - hostname: a.st1.ntp.br
-        iburst: yes
-      - hostname: b.st1.ntp.br
-        iburst: yes
-      - hostname: c.st1.ntp.br
-        iburst: yes
-    timezone: UTC
-
-  tasks:
-    - name: Set timezone
-      timezone:
-        name: "{{ timezone }}"
+    network_connections:
+      - name: DBnic
+        state: up
+        type: ethernet
+        interface_name: eth1
+        autoconnect: yes
+        ip:
+          dhcp4: no
+          auto6: no
+          address:
+           - "10.10.10.{{ 254 | random( start=2) }}/24"
+  roles:
+    - role: rhel-system-roles.network
