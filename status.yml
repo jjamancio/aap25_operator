@@ -6,6 +6,6 @@
     - name: Gather service facts
       ansible.builtin.service_facts:
 
-    - name: Display sshd service status
+    - name: Display JBoss service status
       debug:
-        msg: "SSH service state: {{ ansible_facts.services['sshd.service'].state }}"
+        msg: "JBoss service state: {{ ansible_facts.services['jboss.service'].state }}"
