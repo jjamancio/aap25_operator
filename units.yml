@@ -1,8 +1,10 @@
 ---
 - name: Rundeck with ansible
   hosts: node1
-  collections:
-    - redhat.rhel_system_roles
+  tasks:
+    - name: Perform action on systemd units
+      ansible.builtin.include_role:
+        name: redhat.rhel_system_roles.systemd
   vars:
     systemd_started_units:
       - jboss.service
