@@ -1,6 +1,6 @@
  ---
 - name: Rundeck with ansible
-  hosts: 
+  hosts: node1
   collections:
     - redhat.rhel_system_roles
   vars:
