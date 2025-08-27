@@ -1,6 +1,6 @@
 ---
 - name: Rundeck with ansible
-  hosts: node1
+  hosts: node4
   tasks:
     - name: Perform action on systemd units
       ansible.builtin.include_role:
