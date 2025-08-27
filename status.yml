@@ -1,0 +1,8 @@
+---
+- name: Gather service facts
+  hosts: dev
+  ansible.builtin.service_facts:
+
+- name: Display sshd service status
+  debug:
+    msg: "SSH service state: {{ ansible_facts.services['sshd.service'].state }}"
