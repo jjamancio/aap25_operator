@@ -1,0 +1,10 @@
+ ---
+- name: Rundeck with ansible
+  hosts: 
+  become: true
+  become_user: usr_ansible
+  collections:
+    - redhat.rhel_system_roles
+  vars:
+    systemd_started_units:
+      - jboss.service
